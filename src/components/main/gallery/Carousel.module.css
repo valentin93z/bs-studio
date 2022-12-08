@@ -1,0 +1,15 @@
+.carousel__container {
+    width: 100%;
+    height: 600px;
+}
+
+.carousel__container :hover {
+    z-index: -1;
+}
+
+.carousel__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

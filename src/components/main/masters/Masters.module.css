@@ -1,0 +1,144 @@
+.masters {
+    margin-bottom: 160px;
+}
+
+.masters p {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--secondary-color);
+}
+
+.masters__header {
+    max-width: 950px;
+    font-family: 'Vetrino', serif;
+    font-size: 64px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: var(--dark-color);
+    margin: 50px 0;
+}
+
+.masters__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 100px;
+}
+
+.masters__item {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+}
+
+.masters__item:nth-of-type(even) {
+    margin-top: 100px;
+}
+
+.masters__item img {
+    display: block;
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.masters__name {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.masters__item:nth-of-type(odd) .masters__name {
+    margin: 30px 0 10px 0;
+}
+
+.masters__item:nth-of-type(even) .masters__name {
+    margin: 80px 0 10px 0;
+}
+
+.masters__quality {
+    font-size: 14px !important;
+    margin-bottom: 30px;
+}
+
+.masters__description {
+    font-size: 14px !important;
+    margin-bottom: 30px;
+}
+
+.masters__button {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .masters__header {
+        font-size: 48px;
+    }
+
+    .masters__list {
+        grid-template-columns: 1fr;
+    }
+
+    .masters__item:nth-of-type(even) {
+        margin-top: 0;
+    }
+
+    .masters__item:nth-of-type(even) .masters__name {
+        margin: 30px 0 10px 0;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .masters__header {
+        font-size: 30px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .masters__item {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .masters__item img {
+        margin: 0 auto;
+    }
+
+    .masters__name {
+        text-align: center;
+    }
+
+    .masters__quality {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .masters__description {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .masters__button {
+        display: block;
+        margin: 0 auto;
+    }
+}

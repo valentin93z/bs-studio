@@ -1,0 +1,25 @@
+:root {
+  --light-color: #FFFCFA;
+  --dark-color: #1D1C1B;
+  --primary-color: #968981;
+  --secondary-color: #868686;
+  --footer-background: #F6F2EF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  background-color: var(--light-color);
+  overflow-x: hidden;
+}
+
+.App {
+  max-width: 100%;
+  margin: 0 auto;
+}
