@@ -21,7 +21,7 @@ const Navbar: FC = () => {
 
   return (
     <header className={classes.navbar}>
-        <div className={classes.navbar__logo}>DIVA NAIL</div>
+        <div className={classes.navbar__logo}>MST NAIL</div>
         <nav className={classes.navbar__navigation}>
             <ul className={toggle ? classes.navbar__list_active : classes.navbar__list}>
               {navLinks.map((item, index) =>
@@ -38,7 +38,7 @@ const Navbar: FC = () => {
             </div>
         </nav>
         <div className={classes.navbar__contacts}>
-          <p className={classes.navbar__address}>г.Белгород ул.Ленина д.1</p>
+          <p className={classes.navbar__address}>г.Белгород ул.Попова д.1</p>
           <p className={classes.navbar__address}>Телефон: 1-111-111-11-11</p>
         </div>
     </header>
