@@ -1,9 +1,9 @@
 interface IService {
+    id: string;
     title: string;
     price: string;
 };
 
 export interface IServiceData {
-    manicure: IService[],
-    pedicure: IService[],
+    [key: string]: IService[],
 };

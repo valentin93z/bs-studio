@@ -5,6 +5,7 @@ const initialState: IOrder = {
     date: '',
     time: '',
     master: '',
+    serviceType: '',
     service: '',
 }
 
@@ -20,6 +21,9 @@ export const orderSlice = createSlice({
         },
         setMaster(state, action: PayloadAction<string>) {
             state.master = action.payload;
+        },
+        setServiceType(state, action: PayloadAction<string>) {
+            state.serviceType = action.payload;
         },
         setService(state, action: PayloadAction<string>) {
             state.service = action.payload;
