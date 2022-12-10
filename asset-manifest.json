@@ -1,34 +1,17 @@
 {
   "files": {
-    "main.css": "/bs-studio/static/css/main.16509eb7.css",
-    "main.js": "/bs-studio/static/js/main.297702d6.js",
-    "static/media/gallery01.jpg": "/bs-studio/static/media/gallery01.a0058720c938691914a5.jpg",
-    "static/media/gallery08.jpg": "/bs-studio/static/media/gallery08.fda733d4d96c4d86e9b8.jpg",
+    "main.css": "/bs-studio/static/css/main.c9c86f50.css",
+    "main.js": "/bs-studio/static/js/main.53f0438c.js",
     "static/media/master04.jpg": "/bs-studio/static/media/master04.5274fb9a6ae69656a890.jpg",
     "static/media/master01.jpg": "/bs-studio/static/media/master01.d51c75000792642c20f1.jpg",
-    "static/media/gallery07.jpg": "/bs-studio/static/media/gallery07.9d0346fd2daa61977e76.jpg",
-    "static/media/cover02.jpg": "/bs-studio/static/media/cover02.a5c4fc8bd2c370a3336d.jpg",
-    "static/media/cover01.jpg": "/bs-studio/static/media/cover01.9c4ed653de9c4ee2a96e.jpg",
-    "static/media/gallery12.jpg": "/bs-studio/static/media/gallery12.35997d5b25f9d01aac57.jpg",
     "static/media/master02.jpg": "/bs-studio/static/media/master02.d33d431167dff3b08a39.jpg",
     "static/media/master03.jpg": "/bs-studio/static/media/master03.24cea5004a5f048a3450.jpg",
-    "static/media/gallery10.jpg": "/bs-studio/static/media/gallery10.56bc3bb0eb9bc3653103.jpg",
-    "static/media/about01.jpg": "/bs-studio/static/media/about01.075bc3aa7b8053d2941f.jpg",
-    "static/media/gallery05.jpg": "/bs-studio/static/media/gallery05.aaaf9765b95a08bb6799.jpg",
-    "static/media/cover03.jpg": "/bs-studio/static/media/cover03.800c173f5ba5da34d522.jpg",
-    "static/media/gallery06.jpg": "/bs-studio/static/media/gallery06.928469b3491da8a8caa7.jpg",
-    "static/media/gallery11.jpg": "/bs-studio/static/media/gallery11.14baf70bda196b640251.jpg",
-    "static/media/gallery02.jpg": "/bs-studio/static/media/gallery02.d640c5b7532acdef4485.jpg",
-    "static/media/gallery03.jpg": "/bs-studio/static/media/gallery03.62e3bd5ba6a760d215ed.jpg",
-    "static/media/about02.jpg": "/bs-studio/static/media/about02.ead7ad788335a4ab6bd1.jpg",
-    "static/media/gallery09.jpg": "/bs-studio/static/media/gallery09.6b6112443a9dd9f88d49.jpg",
-    "static/media/gallery04.jpg": "/bs-studio/static/media/gallery04.5af87aa406a6a69af9a4.jpg",
     "index.html": "/bs-studio/index.html",
-    "main.16509eb7.css.map": "/bs-studio/static/css/main.16509eb7.css.map",
-    "main.297702d6.js.map": "/bs-studio/static/js/main.297702d6.js.map"
+    "main.c9c86f50.css.map": "/bs-studio/static/css/main.c9c86f50.css.map",
+    "main.53f0438c.js.map": "/bs-studio/static/js/main.53f0438c.js.map"
   },
   "entrypoints": [
-    "static/css/main.16509eb7.css",
-    "static/js/main.297702d6.js"
+    "static/css/main.c9c86f50.css",
+    "static/js/main.53f0438c.js"
   ]
 }
