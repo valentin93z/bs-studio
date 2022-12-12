@@ -24,9 +24,8 @@
     display: none;
 }
 
-.navbar__icons div {
-    font-size: 28px;
-    text-align: center;
+.navbar__icons svg {
+    fill: var(--secondary-color);
     cursor: pointer;
 }
 
