@@ -8,6 +8,7 @@ import { timesData } from './timesData';
 import { createTheme, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, ThemeProvider } from '@mui/material';
 import { masterData } from '../main/masters/masterData';
 import { serviceData } from '../main/servs/serviceData';
+import axios from 'axios';
 
 const Order: FC = () => {
 
@@ -20,7 +21,19 @@ const Order: FC = () => {
   });
 
   const dispatch = useAppDispatch();
-  const { master, serviceType } = useAppSelector(state => state.orderReducer);
+  const { firstName, lastName, phone, date, time, master, serviceType, service } = useAppSelector(state => state.orderReducer);
+
+  const changeHandlerFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(orderSlice.actions.setFirstName(e.target.value));
+  }
+
+  const changeHandlerLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(orderSlice.actions.setLastName(e.target.value));
+  }
+
+  const changeHandlerPhone = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(orderSlice.actions.setPhone(e.target.value));
+  }
 
   const handleDateChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(orderSlice.actions.setDate(e.target.value));
@@ -40,12 +53,43 @@ const Order: FC = () => {
 
   const handleServiceChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(orderSlice.actions.setService(e.target.value));
-    console.log('setService');
   }
+
+      const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        axios.post('http://localhost:4444/order', {
+            firstName,
+            lastName,
+            phone,
+            date,
+            time,
+            master,
+            serviceType,
+            service,
+        })
+        .then(() => {
+            dispatch(orderSlice.actions.setFirstName(''));
+            dispatch(orderSlice.actions.setLastName(''));
+            dispatch(orderSlice.actions.setPhone(''));
+            dispatch(orderSlice.actions.setDate(''));
+            dispatch(orderSlice.actions.setTime(''));
+            dispatch(orderSlice.actions.setMaster(''));
+            dispatch(orderSlice.actions.setServiceType(''));
+            dispatch(orderSlice.actions.setService(''));
+        })
+        .catch((e) => {
+            console.log('Error:', e);
+        })
+    }
 
   return (
     <ThemeProvider theme={theme}>
       <section className={classes.order}>
+      <div className={classes.order__textfields}>
+                    <input onChange={(e) => changeHandlerFirstName(e)} value={firstName} type="text" placeholder='Имя' />
+                    <input onChange={(e) => changeHandlerLastName(e)} value={lastName} type="text" placeholder='Фамилия' />
+                    <input onChange={(e) => changeHandlerPhone(e)} value={phone} type="text" placeholder='Номер телефона' />
+                </div>
         <div className={classes.calendar}>
           <div className={classes.month_indicator}>Декабрь 2022</div>
           <div className={classes.day_of_week}>
@@ -99,7 +143,6 @@ const Order: FC = () => {
               </Select>
             </FormControl>
           </div>
-
           <ul className={classes.service__list}>
             {serviceType && serviceData[`${serviceType}`].map((item) =>
             <li className={classes.service__item} key={item.id}>
@@ -117,6 +160,7 @@ const Order: FC = () => {
               </label>
             </li>)}
           </ul>
+          <button className={classes.order__button} onClick={sendOrderRequest}>Записаться</button>
         </div>
       </section>
     </ThemeProvider>

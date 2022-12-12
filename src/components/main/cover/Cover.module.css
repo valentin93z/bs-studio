@@ -36,6 +36,11 @@
     transition: 0.5s;
 }
 
+.cover__button_link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .cover__images {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

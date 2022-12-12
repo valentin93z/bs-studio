@@ -5,6 +5,33 @@
     padding: 0 20px;
 }
 
+.order__textfields {
+    max-width: 400px;
+    margin: 0 auto 50px auto;
+}
+
+.order__textfields input {
+    font-family: 'Fira Sans', sans-serif;
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    background: var(--light-color);
+}
+
+.order__textfields input:nth-of-type(1),
+.order__textfields input:nth-of-type(2) {
+    margin-bottom: 20px;
+}
+
+.order__textfields input::placeholder {
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
 .calendar {
     max-width: 400px;
     background: var(--footer-background);
@@ -74,6 +101,7 @@
     align-items: center;
     flex-wrap: wrap;
     column-gap: 15px;
+    row-gap: 15px;
     margin: 0 auto 40px auto;
 }
 
@@ -150,4 +178,24 @@
 
 .service__price {
     flex-shrink: 0;
+}
+
+.order__button {
+    display: block;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    background: none;
+    margin: 0 auto 50px auto;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.order__button:hover,
+.order__button:focus,
+.order__button:active {
+    color: var(--light-color);
+    background: var(--primary-color);
+    transition: 0.5s;
 }

@@ -2,6 +2,9 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IOrder } from "../../models/IOrder";
 
 const initialState: IOrder = {
+    firstName: '',
+    lastName: '',
+    phone: '',
     date: '',
     time: '',
     master: '',
@@ -13,6 +16,15 @@ export const orderSlice = createSlice({
     name: 'order',
     initialState,
     reducers: {
+        setFirstName(state, action: PayloadAction<string>) {
+            state.firstName = action.payload;
+        },
+        setLastName(state, action: PayloadAction<string>) {
+            state.lastName = action.payload;
+        },
+        setPhone(state, action: PayloadAction<string>) {
+            state.phone = action.payload;
+        },
         setDate(state, action: PayloadAction<string>) {
             state.date = action.payload;
         },
