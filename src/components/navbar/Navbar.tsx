@@ -1,3 +1,4 @@
+import { Slide } from '@mui/material';
 import React, {FC} from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { burgerSlice } from '../../app/reducers/burgerSlice';
@@ -23,13 +24,15 @@ const Navbar: FC = () => {
     <header className={classes.navbar}>
         <div className={classes.navbar__logo}>MST NAIL</div>
         <nav className={classes.navbar__navigation}>
-            <ul className={toggle ? classes.navbar__list_active : classes.navbar__list}>
+          <Slide direction='left' in={toggle}>
+            <ul className={classes.navbar__list}>
               {navLinks.map((item, index) =>
                 <li className={classes.navbar__item} key={index}>
                   <a className={classes.navbar__link} href={item.url}>{item.title}</a>
                 </li>
               )}
             </ul>
+          </Slide>
             <div className={classes.navbar__icons} onClick={toggleBurger}>
               {toggle
                 ? <div>&#x78;</div>
