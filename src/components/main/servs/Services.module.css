@@ -11,7 +11,7 @@
 
 .services__header {
     max-width: 950px;
-    font-family: 'Vetrino', serif;
+    font-family: 'Cormorant Infant', serif;
     font-size: 64px;
     text-transform: uppercase;
     font-weight: 300;
@@ -35,7 +35,7 @@
 
 .service__typeMan,
 .service__typePed {
-    font-family: 'Vetrino', serif;
+    font-family: 'Cormorant Infant', serif;
     font-size: 46px;
     text-transform: uppercase;
     font-weight: 300;

@@ -49,6 +49,7 @@ const Order: FC = () => {
 
   const handleSelectServiceType = (e: SelectChangeEvent) => {
     dispatch(orderSlice.actions.setServiceType(e.target.value));
+    dispatch(orderSlice.actions.setService(''));
   }
 
   const handleServiceChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -144,7 +145,7 @@ const Order: FC = () => {
             </FormControl>
           </div>
           <ul className={classes.service__list}>
-            {serviceType && serviceData[`${serviceType}`].map((item) =>
+            {serviceType && serviceData[serviceType].map((item) =>
             <li className={classes.service__item} key={item.id}>
               <input
                 className={classes.service__radio}
