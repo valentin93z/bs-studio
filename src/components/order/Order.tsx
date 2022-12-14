@@ -5,10 +5,11 @@ import { getDaysInMonth } from '../../utils/getDaysInMonth';
 import classes from './Order.module.css';
 import { orderSlice } from '../../app/reducers/orderSlice';
 import { timesData } from './timesData';
-import { createTheme, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, ThemeProvider } from '@mui/material';
+import { createTheme, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, TextField, ThemeProvider } from '@mui/material';
 import { masterData } from '../main/masters/masterData';
 import { serviceData } from '../main/servs/serviceData';
 import axios from 'axios';
+import { useInput } from '../../hooks/useInput';
 
 const Order: FC = () => {
 
@@ -24,15 +25,21 @@ const Order: FC = () => {
   const { firstName, lastName, phone, date, time, master, serviceType, service } = useAppSelector(state => state.orderReducer);
 
   const changeHandlerFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(orderSlice.actions.setFirstName(e.target.value));
+    if (e.target.value.length <= 15) {
+      dispatch(orderSlice.actions.setFirstName(e.target.value));
+    }
   }
 
   const changeHandlerLastName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(orderSlice.actions.setLastName(e.target.value));
+    if (e.target.value.length <= 15) {
+      dispatch(orderSlice.actions.setLastName(e.target.value));
+    }
   }
 
   const changeHandlerPhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(orderSlice.actions.setPhone(e.target.value));
+    if (e.target.value.length <= 12) {
+      dispatch(orderSlice.actions.setPhone(e.target.value));
+    }
   }
 
   const handleDateChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,41 +63,77 @@ const Order: FC = () => {
     dispatch(orderSlice.actions.setService(e.target.value));
   }
 
-      const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        axios.post('http://localhost:4444/order', {
-            firstName,
-            lastName,
-            phone,
-            date,
-            time,
-            master,
-            serviceType,
-            service,
-        })
-        .then(() => {
-            dispatch(orderSlice.actions.setFirstName(''));
-            dispatch(orderSlice.actions.setLastName(''));
-            dispatch(orderSlice.actions.setPhone(''));
-            dispatch(orderSlice.actions.setDate(''));
-            dispatch(orderSlice.actions.setTime(''));
-            dispatch(orderSlice.actions.setMaster(''));
-            dispatch(orderSlice.actions.setServiceType(''));
-            dispatch(orderSlice.actions.setService(''));
-        })
-        .catch((e) => {
-            console.log('Error:', e);
-        })
-    }
+  const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    axios.post('http://localhost:4444/order', {
+      firstName,
+      lastName,
+      phone,
+      date,
+      time,
+      master,
+      serviceType,
+      service,
+    })
+    .then(() => {
+      dispatch(orderSlice.actions.setFirstName(''));
+      dispatch(orderSlice.actions.setLastName(''));
+      dispatch(orderSlice.actions.setPhone(''));
+      dispatch(orderSlice.actions.setDate(''));
+      dispatch(orderSlice.actions.setTime(''));
+      dispatch(orderSlice.actions.setMaster(''));
+      dispatch(orderSlice.actions.setServiceType(''));
+      dispatch(orderSlice.actions.setService(''));
+    })
+    .catch((e) => {
+      console.log('Error:', e);
+    })
+  }
+
+  const firstNameValid = useInput(firstName, {isEmpty: true, minLength: 2});
+  const lastNameValid = useInput(lastName, {isEmpty: true, minLength: 2});
+  const phoneValid = useInput(phone, {isEmpty: true, isPhone: true});
 
   return (
     <ThemeProvider theme={theme}>
       <section className={classes.order}>
-      <div className={classes.order__textfields}>
-                    <input onChange={(e) => changeHandlerFirstName(e)} value={firstName} type="text" placeholder='Имя' />
-                    <input onChange={(e) => changeHandlerLastName(e)} value={lastName} type="text" placeholder='Фамилия' />
-                    <input onChange={(e) => changeHandlerPhone(e)} value={phone} type="text" placeholder='Номер телефона' />
-                </div>
+        <div className={classes.order__textfields}>
+          <TextField
+            variant='standard'
+            id='firstName'
+            label='Имя'
+            sx={{mb: 2}}
+            value={firstName}
+            onChange={changeHandlerFirstName}
+            onBlur={firstNameValid.onBlur}
+            error={(firstNameValid.isDirty && firstNameValid.isEmpty) || (firstNameValid.isDirty && firstNameValid.minLengthError)}
+            helperText={firstNameValid.isDirty && firstNameValid.errorText}
+            fullWidth
+          />
+          <TextField
+            variant='standard'
+            id='lastName'
+            label='Фамилия'
+            sx={{mb: 2}}
+            value={lastName}
+            onChange={changeHandlerLastName}
+            onBlur={lastNameValid.onBlur}
+            error={(lastNameValid.isDirty && lastNameValid.isEmpty) || (lastNameValid.isDirty && lastNameValid.minLengthError)}
+            helperText={lastNameValid.isDirty && lastNameValid.errorText}
+            fullWidth
+          />
+          <TextField
+            variant='standard'
+            id='phone'
+            label='Номер телефона'
+            value={phone}
+            onChange={changeHandlerPhone}
+            onBlur={phoneValid.onBlur}
+            error={(phoneValid.isDirty && phoneValid.isEmpty) || (phoneValid.isDirty && phoneValid.phoneError)}
+            helperText={phoneValid.isDirty && phoneValid.errorText}
+            fullWidth
+          />
+        </div>
         <div className={classes.calendar}>
           <div className={classes.month_indicator}>Декабрь 2022</div>
           <div className={classes.day_of_week}>
@@ -131,7 +174,12 @@ const Order: FC = () => {
           <div className={classes.master}>
             <FormControl variant='standard' sx={{m: 1, minWidth: 120}} fullWidth>
               <InputLabel id='master_select_label'>Мастер</InputLabel>
-              <Select value={master} onChange={handleSelectMaster} id='master_select' labelId='master-select-label'>
+              <Select
+                id='master_select'
+                labelId='master-select-label'
+                value={master}
+                onChange={handleSelectMaster}
+              >
                 {masterData.map((master) => 
                 <MenuItem key={master.name} value={master.name}>{master.name}</MenuItem>)}
               </Select>

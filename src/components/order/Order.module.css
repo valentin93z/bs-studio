@@ -10,7 +10,11 @@
     margin: 0 auto 50px auto;
 }
 
-.order__textfields input {
+.order__textfield {
+    margin-bottom: 20px;
+}
+
+/* .order__textfields input {
     font-family: 'Fira Sans', sans-serif;
     display: block;
     width: 100%;
@@ -20,17 +24,17 @@
     border: none;
     border-bottom: 1px solid var(--primary-color);
     background: var(--light-color);
-}
+} */
 
-.order__textfields input:nth-of-type(1),
+/* .order__textfields input:nth-of-type(1),
 .order__textfields input:nth-of-type(2) {
     margin-bottom: 20px;
-}
+} */
 
-.order__textfields input::placeholder {
+/* .order__textfields input::placeholder {
     font-size: 16px;
     color: var(--secondary-color);
-}
+} */
 
 .calendar {
     max-width: 400px;
