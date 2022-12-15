@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { dayOfWeekData } from './dayOfWeekData';
 import { getDaysInMonth } from '../../utils/getDaysInMonth';
@@ -10,6 +10,7 @@ import { masterData } from '../main/masters/masterData';
 import { serviceData } from '../main/servs/serviceData';
 import axios from 'axios';
 import { useInput } from '../../hooks/useInput';
+import { calendarSlice } from '../../app/reducers/calendarSlice';
 
 const Order: FC = () => {
 
@@ -23,6 +24,13 @@ const Order: FC = () => {
 
   const dispatch = useAppDispatch();
   const { firstName, lastName, phone, date, time, master, serviceType, service } = useAppSelector(state => state.orderReducer);
+
+  // const { currentDate } = useAppSelector(state => state.calendarReducer);
+  // useEffect(() => {
+  //   const currentDate = new Date();
+  //   dispatch(calendarSlice.actions.setCurrentDate(currentDate));
+  // }, []);
+
 
   const changeHandlerFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.length <= 15) {
@@ -172,7 +180,7 @@ const Order: FC = () => {
           </ul>
 
           <div className={classes.master}>
-            <FormControl variant='standard' sx={{m: 1, minWidth: 120}} fullWidth>
+            <FormControl variant='standard' sx={{mb: 2}} fullWidth>
               <InputLabel id='master_select_label'>Мастер</InputLabel>
               <Select
                 id='master_select'
@@ -184,7 +192,7 @@ const Order: FC = () => {
                 <MenuItem key={master.name} value={master.name}>{master.name}</MenuItem>)}
               </Select>
             </FormControl>
-            <FormControl variant='standard' sx={{m: 1, minWidth: 120}} fullWidth>
+            <FormControl variant='standard' sx={{mb: 2}} fullWidth>
               <InputLabel id='serviceType_select_label'>Услуги</InputLabel>
               <Select value={serviceType} onChange={handleSelectServiceType} id='serviceType_select' labelId='serviceType-select-label'>
                 <MenuItem value='manicure'>Маникюр</MenuItem>
