@@ -1,0 +1,44 @@
+.time {
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+}
+
+.times__list {
+    max-width: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 15px;
+    margin: 0 auto 40px auto;
+}
+
+.times__item {
+    width: 60px;
+    position: relative;
+    text-align: center;
+    list-style-type: none;
+}
+
+.times__radio {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.times__label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.times__label:hover {
+    background: var(--secondary-color);
+}
+
+.times__radio:checked ~ .times__label {
+    background: var(--primary-color);
+}

@@ -8,6 +8,7 @@ import Calendar from './calendar/Calendar';
 import ClientInfo from './clientInfo/ClientInfo';
 import Master from './master/Master';
 import Services from './serv/Services';
+import Time from './time/Time';
 
 const Order: FC = () => {
 
@@ -70,26 +71,11 @@ const Order: FC = () => {
     <ThemeProvider theme={theme}>
       <section className={classes.order}>
         <Calendar />
-        <div>
-          {/* <ul className={classes.times__list}>
-            {timesData.map((time) =>
-            <li className={classes.times__item} key={time}>
-              <input
-                className={classes.times__radio}
-                type="radio"
-                name="times"
-                id={time}
-                value={time}
-                onChange={handleTimeChecked}
-              />
-              <label className={classes.times__label} htmlFor={time}>{time}</label>
-            </li>)}
-          </ul> */}
-          <ClientInfo />
-          <Master />
-          <Services />
-          <button className={classes.order__button}>Записаться</button>
-        </div>
+        <Time />
+        <ClientInfo />
+        <Master />
+        <Services />
+        <button className={classes.order__button}>Записаться</button>
       </section>
     </ThemeProvider>
   )
