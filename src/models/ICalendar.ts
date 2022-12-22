@@ -1,3 +1,6 @@
+import { IDay } from "./IDay";
+
 export interface ICalendar {
-    currentDate: any;
+    date: number | null;
+    days: IDay[];
 }
