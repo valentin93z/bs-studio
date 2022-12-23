@@ -7,6 +7,9 @@ import ClientInfo from './clientInfo/ClientInfo';
 import Master from './master/Master';
 import Services from './serv/Services';
 import Time from './time/Time';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { calendarSlice } from '../../app/reducers/calendarSlice';
+import { orderSlice } from '../../app/reducers/orderSlice';
 
 const Order: FC = () => {
 
@@ -18,41 +21,43 @@ const Order: FC = () => {
     },
   });
 
-  // const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
-  //   e.preventDefault();
-  //   axios.post('http://localhost:4444/order', {
-  //     firstName,
-  //     lastName,
-  //     phone,
-  //     date,
-  //     time,
-  //     master,
-  //     serviceType,
-  //     service,
-  //   })
-  //   .then(() => {
-  //     dispatch(orderSlice.actions.setFirstName(''));
-  //     dispatch(orderSlice.actions.setLastName(''));
-  //     dispatch(orderSlice.actions.setPhone(''));
-  //     dispatch(orderSlice.actions.setDate(''));
-  //     dispatch(orderSlice.actions.setTime(''));
-  //     dispatch(orderSlice.actions.setMaster(''));
-  //     dispatch(orderSlice.actions.setServiceType(''));
-  //     dispatch(orderSlice.actions.setService(''));
-  //   })
-  //   .catch((e) => {
-  //     console.log('Error:', e);
-  //   })
-  // }
+  const dispatch = useAppDispatch();
+  const { id, firstName, lastName, phone, service, master } = useAppSelector(state => state.orderReducer);
+  const { events } = useAppSelector(state => state.calendarReducer);
+
+  const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    axios.patch('http://192.168.0.101:4444/events', {
+      id,
+      firstName,
+      lastName,
+      phone,
+      master,
+      service,
+      status: 'ordered',
+    })
+    .then(() => {
+      dispatch(orderSlice.actions.setId({}));
+      dispatch(orderSlice.actions.setFirstName(''));
+      dispatch(orderSlice.actions.setLastName(''));
+      dispatch(orderSlice.actions.setPhone(''));
+      dispatch(orderSlice.actions.setMaster(''));
+      dispatch(orderSlice.actions.setServiceType(''));
+      dispatch(orderSlice.actions.setService(''));
+    })
+    .catch((e) => {
+      console.log('Error:', e);
+    })
+  }
 
   const fetchEvents = async () => {
     const response = await axios.get('http://192.168.0.101:4444/events');
-    console.log(response.data);
+    dispatch(calendarSlice.actions.getEvents(response.data));
   }
 
   useEffect(() => {
     fetchEvents();
-  }, []);
+  }, [events]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,7 +67,7 @@ const Order: FC = () => {
         <ClientInfo />
         <Master />
         <Services />
-        <button className={classes.order__button}>Записаться</button>
+        <button className={classes.order__button} onClick={sendOrderRequest}>Записаться</button>
       </section>
     </ThemeProvider>
   )

@@ -3,6 +3,7 @@ import { IDay } from "../../models/IDay";
 import { IOrder } from "../../models/IOrder";
 
 const initialState: IOrder = {
+    id: {},
     firstName: '',
     lastName: '',
     phone: '',
@@ -21,6 +22,9 @@ export const orderSlice = createSlice({
     name: 'order',
     initialState,
     reducers: {
+        setId(state, action: PayloadAction<Object>) {
+            state.id = action.payload;
+        },
         setFirstName(state, action: PayloadAction<string>) {
             state.firstName = action.payload;
         },
