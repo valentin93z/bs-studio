@@ -1,6 +1,6 @@
 import { IDay } from "./IDay";
 
 export interface ICalendar {
-    date: number | null;
+    fullDate: number | null;
     days: IDay[];
 }

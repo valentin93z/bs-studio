@@ -1,7 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import classes from './Order.module.css';
-import { orderSlice } from '../../app/reducers/orderSlice';
 import { createTheme, ThemeProvider } from '@mui/material';
 import axios from 'axios';
 import Calendar from './calendar/Calendar';
@@ -19,17 +17,6 @@ const Order: FC = () => {
       },
     },
   });
-
-  const dispatch = useAppDispatch();
-  const { date, time } = useAppSelector(state => state.orderReducer);
-  
-  const handleDateChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(orderSlice.actions.setDate(e.target.value));
-  }
-
-  const handleTimeChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(orderSlice.actions.setTime(e.target.value));
-  }
 
   // const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
   //   e.preventDefault();

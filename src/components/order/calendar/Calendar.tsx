@@ -1,6 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { calendarSlice } from '../../../app/reducers/calendarSlice';
+import { orderSlice } from '../../../app/reducers/orderSlice';
 import { getDaysOfMonth } from '../../../utils/getDaysOfMonth';
 import classes from './Calendar.module.css';
 import { daysNames } from './daysNames';
@@ -9,19 +10,19 @@ import { monthNames } from './monthNames';
 const Calendar: FC = () => {
 
     const dispatch = useAppDispatch();
-    const { date, days } = useAppSelector(state => state.calendarReducer);
+    const { fullDate, days } = useAppSelector(state => state.calendarReducer);
+    const { selectedDate } = useAppSelector(state => state.orderReducer);
 
-    const year = date && new Date(date).getFullYear();
-    const monthName = date && monthNames[new Date(date).getMonth()];
+    const year = fullDate && new Date(fullDate).getFullYear();
+    const monthName = fullDate && monthNames[new Date(fullDate).getMonth()];
 
     useEffect(() => {
-        dispatch(calendarSlice.actions.getDays(getDaysOfMonth(year, date && new Date(date).getMonth())));
-      }, [date]);
+        dispatch(calendarSlice.actions.getDays(getDaysOfMonth(year, fullDate && new Date(fullDate).getMonth())));
+      }, [fullDate]);
     
-    //   const setDayValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     dispatch(eventSlice.actions.setDate(e.target.value));
-    //   }
-
+      const setDayValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(orderSlice.actions.setDate(e.target.value));
+      }
 
   return (
     <div className={classes.calendar}>
@@ -50,7 +51,8 @@ const Calendar: FC = () => {
                 name="dayOfMonth"
                 id={`${day.dayOfMonth}_${day.month}_${day.year}`}
                 value={JSON.stringify(day)}
-                // onChange={setDayValue}
+                onChange={setDayValue}
+                checked={day.year === selectedDate.year && day.month === selectedDate.month && day.dayOfMonth === selectedDate.dayOfMonth}
               />
               <label className={classes.daysOfMonth__label} htmlFor={`${day.dayOfMonth}_${day.month}_${day.year}`}>{day.dayOfMonth}</label>
             </li>)}

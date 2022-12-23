@@ -3,7 +3,7 @@ import { ICalendar } from "../../models/ICalendar";
 import { IDay } from "../../models/IDay";
 
 const initialState: ICalendar = {
-    date: new Date().getTime(),
+    fullDate: new Date().getTime(),
     days: [],
 }
 
@@ -12,12 +12,12 @@ export const calendarSlice = createSlice({
     initialState,
     reducers: {
         incrementMonth(state) {
-            const date = state.date && new Date(state.date);
-            state.date = date && date.setMonth(date.getMonth() + 1);
+            const date = state.fullDate && new Date(state.fullDate);
+            state.fullDate = date && date.setMonth(date.getMonth() + 1);
         },
         decrementMonth(state) {
-            const date = state.date && new Date(state.date);
-            state.date = date && date.setMonth(date.getMonth() - 1);
+            const date = state.fullDate && new Date(state.fullDate);
+            state.fullDate = date && date.setMonth(date.getMonth() - 1);
         },
         getDays(state, action: PayloadAction<IDay[]>) {
             state.days = action.payload;

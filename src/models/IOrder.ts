@@ -1,9 +1,10 @@
+import { IDay } from "./IDay";
+
 export interface IOrder {
     firstName: string;
     lastName: string;
     phone: string;
-    date: string;
-    time: string;
+    selectedDate: IDay;
     master: string;
     serviceType: string;
     service: string;

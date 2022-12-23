@@ -1,12 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IDay } from "../../models/IDay";
 import { IOrder } from "../../models/IOrder";
 
 const initialState: IOrder = {
     firstName: '',
     lastName: '',
     phone: '',
-    date: '',
-    time: '',
+    selectedDate: {
+        year: new Date().getFullYear(),
+        month: new Date().getMonth(),
+        dayOfMonth: new Date().getDate(),
+        dayOfWeek: new Date().getDay(),
+    },
     master: '',
     serviceType: '',
     service: '',
@@ -26,10 +31,11 @@ export const orderSlice = createSlice({
             state.phone = action.payload;
         },
         setDate(state, action: PayloadAction<string>) {
-            state.date = action.payload;
-        },
-        setTime(state, action: PayloadAction<string>) {
-            state.time = action.payload;
+            const data: IDay = JSON.parse(action.payload);
+            state.selectedDate.year = data.year;
+            state.selectedDate.month = data.month;
+            state.selectedDate.dayOfMonth = data.dayOfMonth;
+            state.selectedDate.dayOfWeek = data.dayOfWeek;
         },
         setMaster(state, action: PayloadAction<string>) {
             state.master = action.payload;
