@@ -27,7 +27,7 @@ const Order: FC = () => {
 
   const sendOrderRequest = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    axios.patch('http://192.168.0.101:4444/events', {
+    axios.patch('http://192.168.0.103:4444/events', {
       id,
       firstName,
       lastName,
@@ -51,7 +51,7 @@ const Order: FC = () => {
   }
 
   const fetchEvents = async () => {
-    const response = await axios.get('http://192.168.0.101:4444/events');
+    const response = await axios.get('http://192.168.0.103:4444/free-events');
     dispatch(calendarSlice.actions.getEvents(response.data));
   }
 
