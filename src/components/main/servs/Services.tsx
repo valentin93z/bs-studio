@@ -6,6 +6,9 @@ import classes from './Services.module.css';
 const Services: FC = () => {
   return (
     <section className={classes.services}>
+        <div className={classes.anchor__container}>
+            <span id='services' className={classes.anchor}></span>
+        </div>
         <p>Наши услуги</p>
         <h2 className={classes.services__header}>Прайс на все виды услуг</h2>
         <p className={classes.services__text}>Подбор комплекса услуг производится с консультацией мастера в зависимости от пожеланий клиента. Консультация мастеров производится по желанию и включена в стоимость.</p>

@@ -1,3 +1,12 @@
+.anchor__container {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    top: -140px;
+}
+
 .masters {
     margin-bottom: 100px;
 }

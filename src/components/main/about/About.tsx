@@ -6,7 +6,10 @@ import about02 from '../../../img/about02.jpg';
 const About: FC = () => {
   return (
     <section className={classes.about}>
-        <p id='about'>О студии</p>
+        <div className={classes.anchor__container}>
+            <span id='about' className={classes.anchor}></span>
+        </div>
+        <p>О студии</p>
         <h2 className={classes.about__header}>Пространство заботы и любви к себе</h2>
         <div className={classes.about__content}>
           <div>

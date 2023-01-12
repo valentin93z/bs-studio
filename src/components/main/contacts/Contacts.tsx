@@ -5,6 +5,9 @@ const Contacts: FC = () => {
   return (
     <section className={classes.contacts}>
         <div>
+            <div className={classes.anchor__container}>
+                <span id='contacts' className={classes.anchor}></span>
+            </div>
             <h2 className={classes.contacts__header}>Наши контакты</h2>
         </div>
         <address>
