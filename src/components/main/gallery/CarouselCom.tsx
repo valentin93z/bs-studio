@@ -6,12 +6,14 @@ import classes from './Carousel.module.css';
 
 const CarouselCom: FC = () => {
   return (
-    <Carousel width='100%' dynamicHeight={false} showThumbs={false} infiniteLoop={true} showStatus={false}>
+    <div className={classes.carousel__container}>
+      <Carousel width='100%' dynamicHeight={false} showThumbs={false} infiniteLoop={true} showStatus={false}>
         {galleryData.map(item => 
-            <div className={classes.carousel__container} key={item.id}>
-                <img className={classes.carousel__image} src={item.img} alt={item.title} />
-            </div>)}
-    </Carousel>
+          <div className={classes.carousel__img_container} key={item.id}>
+            <img className={classes.carousel__image} src={item.img} alt={item.title} />
+          </div>)}
+      </Carousel>
+    </div>
   )
 }
 

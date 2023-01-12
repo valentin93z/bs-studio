@@ -1,5 +1,5 @@
 .masters {
-    margin-bottom: 160px;
+    margin-bottom: 100px;
 }
 
 .masters p {
@@ -16,14 +16,14 @@
     text-transform: uppercase;
     font-weight: 300;
     color: var(--dark-color);
-    margin: 50px 0;
+    margin: 20px 0 50px 0;
 }
 
 .masters__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
-    row-gap: 100px;
+    row-gap: 30px;
 }
 
 .masters__item {
@@ -42,6 +42,12 @@
     height: 350px;
     object-fit: cover;
     object-position: center;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.masters__item img:hover {
+    filter: none;
 }
 
 .masters__name {

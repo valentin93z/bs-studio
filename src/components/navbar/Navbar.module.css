@@ -6,12 +6,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 50px;
     margin: 0 auto;
+    padding: 40px 50px;
     position: sticky;
     top: 0;
     background-color: var(--light-color);
+    border-bottom: 1px solid lightgray;
     z-index: 10;
+    box-shadow: lightgray 0px 25px 10px -25px;
 }
 
 .navbar__logo {
@@ -63,7 +65,8 @@
     .navbar {
         position: sticky;
         top: 0;
-        padding: 40px 50px;
+        padding: 20px 50px;
+        box-shadow: lightgray 0 10px 15px -10px;
     }
 
     .navbar__icons {
@@ -71,20 +74,21 @@
     }
 
     .navbar__list {
+        display: none;
+    }
+
+    .navbar__list_active {
         position: absolute;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
         gap: 30px;
         width: 100%;
         left: 0;
-        top: 120px;
+        top: 80px;
         background: var(--light-color);
-        padding-bottom: 30px;
-    }
-
-    .navbar__item {
-        padding-left: 20px;
+        padding: 30px 50px;
+        box-shadow: gray 0 10px 15px -10px;
     }
 
     .navbar__contacts {
@@ -99,7 +103,9 @@
         padding: 20px 20px;
     }
 
-    .navbar__list {
+    .navbar__list_active {
         top: 80px;
+        align-items: center;
+        padding: 20px 20px 30px 20px;
     }
 }

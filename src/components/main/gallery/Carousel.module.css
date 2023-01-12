@@ -1,9 +1,15 @@
 .carousel__container {
-    width: 100%;
-    height: 600px;
+    max-width: 60%;
+    margin: 0 auto;
 }
 
-.carousel__container :hover {
+.carousel__img_container {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.carousel__img_container:hover {
     z-index: -1;
 }
 
@@ -12,4 +18,20 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+
+    .carousel__container {
+        max-width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 475px) {
+
+    .carousel__container {
+        max-width: 90%;
+    }
+
 }

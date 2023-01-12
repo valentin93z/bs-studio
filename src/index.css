@@ -1,6 +1,7 @@
 :root {
   --light-color: #FFFCFA;
   --dark-color: #1D1C1B;
+  --black-color: #222222;
   --primary-color: #968981;
   --secondary-color: #868686;
   --footer-background: #F6F2EF;
@@ -18,6 +19,10 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   position: relative;
@@ -25,6 +30,5 @@ body {
 }
 
 .App {
-  max-width: 100%;
   margin: 0 auto;
 }

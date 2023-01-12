@@ -1,5 +1,5 @@
 .services {
-    margin-bottom: 160px;
+    margin-bottom: 100px;
 }
 
 .services p {
@@ -16,7 +16,7 @@
     text-transform: uppercase;
     font-weight: 300;
     color: var(--dark-color);
-    margin: 50px 0;
+    margin: 20px 0 50px 0;
 }
 
 .services__text {

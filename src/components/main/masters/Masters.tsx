@@ -5,7 +5,7 @@ import classes from './Masters.module.css';
 const Masters: FC = () => {
   return (
     <section className={classes.masters}>
-        <p>Наши мастера</p>
+        <p id='masters'>Наши мастера</p>
         <h2 className={classes.masters__header}>Мастера, творящие красоту</h2>
             <ul className={classes.masters__list}>
                 {masterData.map((master, index) =>

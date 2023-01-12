@@ -1,4 +1,3 @@
-import { Collapse, Slide } from '@mui/material';
 import React, {FC} from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { burgerSlice } from '../../app/reducers/burgerSlice';
@@ -8,9 +7,9 @@ import classes from './Navbar.module.css';
 const Navbar: FC = () => {
 
   const navLinks: INavLinks[] = [
-    {title: 'О студии', url: '#'},
+    {title: 'О студии', url: '#about'},
     {title: 'Услуги', url: '#'},
-    {title: 'Мастера', url: '#'},
+    {title: 'Мастера', url: '#masters'},
     {title: 'Галерея', url: '#'},
     {title: 'Контакты', url: '#'},
   ];
@@ -24,15 +23,13 @@ const Navbar: FC = () => {
     <header className={classes.navbar}>
         <div className={classes.navbar__logo}>MST NAIL</div>
         <nav className={classes.navbar__navigation}>
-          <Slide direction='up' in={toggle}>
-            <ul className={classes.navbar__list}>
+            <ul className={ toggle ? classes.navbar__list_active : classes.navbar__list}>
               {navLinks.map((item, index) =>
                 <li className={classes.navbar__item} key={index}>
                   <a className={classes.navbar__link} href={item.url}>{item.title}</a>
                 </li>
               )}
             </ul>
-          </Slide>
             <div className={classes.navbar__icons} onClick={toggleBurger}>
               {toggle
                 ? <div><svg width='25px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></div>
@@ -41,8 +38,7 @@ const Navbar: FC = () => {
             </div>
         </nav>
         <div className={classes.navbar__contacts}>
-          <p className={classes.navbar__address}>г.Белгород ул.Попова д.1</p>
-          <p className={classes.navbar__address}>Телефон: 1-111-111-11-11</p>
+          <p className={classes.navbar__address}>Телефон: +7-915-335-15-15</p>
         </div>
     </header>
   )
