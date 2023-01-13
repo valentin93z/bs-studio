@@ -1,4 +1,5 @@
 import React from 'react';
+import { navLinks } from '../navbar/navLinks';
 import classes from './Footer.module.css';
 
 const Footer = () => {
@@ -6,15 +7,14 @@ const Footer = () => {
     <footer className={classes.footer}>
         <section className={classes.footer__wrapper}>
             <div className={classes.footer__container}>
-                <div className={classes.footer__logo}>MST NAIL</div>
+                <div className={classes.footer__logo}><a className={classes.footer__link} href='#'>MST NAIL</a></div>
                 <nav className={classes.footer__navigation}>
                     <ul className={classes.footer__list}>
-                        <li className={classes.footer__item}>О студии</li>
-                        <li className={classes.footer__item}>Услуги</li>
-                        <li className={classes.footer__item}>Мастера</li>
-                        <li className={classes.footer__item}>Галерея</li>
-                        <li className={classes.footer__item}>Контакты</li>
-                    </ul>
+                			{navLinks.map((item, index) =>
+                    		<li className={classes.footer__item} key={index}>
+                    			<a className={classes.footer__link} href={item.url}>{item.title}</a>
+                    		</li>)}
+                		</ul>
                 </nav>
                 <div className={classes.footer__contacts}>
                     <p>г.Белгород ул.Попова д.1</p>
