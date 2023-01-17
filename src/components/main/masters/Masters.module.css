@@ -52,11 +52,12 @@
     object-fit: cover;
     object-position: center;
     filter: grayscale(100%);
-    transition: 0.5s;
 }
 
 .masters__item img:hover {
-    filter: none;
+    filter: grayscale(0%);
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
 }
 
 .masters__name {

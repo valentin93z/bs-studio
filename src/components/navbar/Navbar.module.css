@@ -2,18 +2,18 @@
     font-family: 'Fira Sans', sans-serif;
     font-size: 16px;
     color: var(--secondary-color);
+    position: sticky;
+    top: 0;
     max-width: 1260px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 40px 50px;
-    position: sticky;
-    top: 0;
     background-color: var(--light-color);
+    box-shadow: lightgray 0px 25px 10px -25px;
     border-bottom: 1px solid lightgray;
     z-index: 10;
-    box-shadow: lightgray 0px 25px 10px -25px;
+    margin: 0 auto;
+    padding: 40px 50px;
 }
 
 .navbar__logo {
@@ -63,8 +63,6 @@
 @media screen and (max-width: 1000px) {
 
     .navbar {
-        position: sticky;
-        top: 0;
         padding: 20px 50px;
         box-shadow: lightgray 0 10px 15px -10px;
     }
@@ -79,16 +77,20 @@
 
     .navbar__list_active {
         position: absolute;
+        left: 0;
+        top: 80px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        gap: 30px;
+        gap: 0;
         width: 100%;
-        left: 0;
-        top: 80px;
         background: var(--light-color);
-        padding: 30px 50px;
         box-shadow: gray 0 10px 15px -10px;
+        padding: 30px 50px;
+    }
+
+    .navbar__item:not(.navbar__item:last-of-type) {
+        margin-bottom: 30px;
     }
 
     .navbar__contacts {

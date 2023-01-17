@@ -28,7 +28,7 @@
 .contacts__list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    row-gap: 20px;
 }
 
 .contacts__item {
@@ -57,7 +57,9 @@
 
     .contacts {
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        column-gap: 20px;
+        row-gap: 20px;
+        -webkit-row-gap: 20px;
     }
 
     .contacts__header {
@@ -72,7 +74,6 @@
 
     .contacts {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
     .contacts__header {

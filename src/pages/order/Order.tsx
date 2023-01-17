@@ -2,14 +2,14 @@ import React, { FC, useEffect } from 'react';
 import classes from './Order.module.css';
 import { createTheme, ThemeProvider } from '@mui/material';
 import axios from 'axios';
-import Calendar from './calendar/Calendar';
-import ClientInfo from './clientInfo/ClientInfo';
-import Master from './master/Master';
-import Services from './serv/Services';
-import Time from './time/Time';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { calendarSlice } from '../../app/reducers/calendarSlice';
 import { orderSlice } from '../../app/reducers/orderSlice';
+import Calendar from '../../components/order/calendar/Calendar';
+import Time from '../../components/order/time/Time';
+import ClientInfo from '../../components/order/clientInfo/ClientInfo';
+import Master from '../../components/order/master/Master';
+import Services from '../../components/order/serv/Services';
 
 const Order: FC = () => {
 
