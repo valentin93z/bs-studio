@@ -41,68 +41,12 @@
     color: inherit;
 }
 
-.cover__images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: flex-end;
-    gap: 10px;
-    margin-top: -100px;
-}
-
-.cover__images img {
-    display: block;
-}
-
-.cover__images img:nth-of-type(1) {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-}
-
-.cover__images img:nth-of-type(2) {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-}
-
-.cover__images img:nth-of-type(3) {
-    width: 500px;
-    height: 525px;
-    object-fit: cover;
-    margin-bottom: 50px;
-}
-
 
 
 @media screen and (max-width: 1140px) {
     
-    .cover__images {
-        width: 100%;
-        position: relative;
-        z-index: -1;
-        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
-        gap: 20px;
-        margin-top: 60px;
-    }
-
-    .cover__images img:nth-of-type(1) {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .cover__images img:nth-of-type(2) {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        top: 50%;
-    }
-    
-    .cover__images img:nth-of-type(3) {
-        width: 100%;
-        height: 100%;
-        margin-bottom: 0;
-    }
 }
+
 
 @media screen and (max-width: 1000px) {
 

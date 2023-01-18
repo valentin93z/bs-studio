@@ -49,7 +49,7 @@
     text-transform: uppercase;
     font-weight: 300;
     color: var(--dark-color);
-    margin: 15px 0;
+    margin: 0 0 15px 0;
 }
 
 .service__typePed {
@@ -59,6 +59,10 @@
 .manicure__services,
 .pedicure__services {
     border-top: 1px solid var(--secondary-color);
+}
+
+.services__list {
+    padding: 10px 0 0 0;
 }
 
 .pedicure__services {
@@ -105,6 +109,7 @@
     .services__container {
         display: grid;
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .manicure__container {
@@ -119,6 +124,10 @@
     .service__typeMan,
     .service__typePed {
         font-size: 36px;
+    }
+
+    .services__list {
+        padding: 0;
     }
 
     .services__item {
@@ -150,6 +159,19 @@
 }
 
 @media screen and (max-width: 475px) {
+
+    .services {
+        margin-bottom: 50px;
+    }
+
+    .services__header {
+        margin: 20px 0 30px 0;
+    }
+    
+    .services__text {
+        margin-bottom: 30px;
+    }
+
     .services p {
         font-size: 14px;
     }
