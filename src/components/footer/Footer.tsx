@@ -18,7 +18,7 @@ const Footer = () => {
                 </nav>
                 <div className={classes.footer__contacts}>
                     <p>г.Белгород ул.Попова д.1</p>
-                    <p>Телефон: 1-111-111-11-11</p>
+                    <p>Телефон: <a className={classes.footer__link} href='tel:+79153351515'>+7-915-335-15-15</a></p>
                 </div>
             </div>
             <div className={classes.footer__rights}>

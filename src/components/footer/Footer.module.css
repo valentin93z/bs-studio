@@ -1,9 +1,8 @@
 .footer {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 16px;
     color: var(--secondary-color);
     background: var(--footer-background);
-    padding: 50px;
+    padding: 20px;
 }
 
 .footer__wrapper {
@@ -12,25 +11,28 @@
 }
 
 .footer__container {
-    display: flex;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 .footer__logo {
     font-family: 'Cormorant Infant', serif;
     font-size: 36px;
     font-weight: 400;
-    flex-shrink: 0;
 }
 
 .footer__list {
-    display: flex;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
     justify-content: center;
     align-items: center;
-    column-gap: 40px;
-    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .footer__item {
@@ -50,28 +52,45 @@
 }
 
 .footer__contacts {
-    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.footer__rights p {
+    font-size: 12px !important;
 }
 
 
 @media screen and (max-width: 1000px) {
     
     .footer__container {
-        flex-direction: column;
-        gap: 30px;
+        grid-template-columns: 1fr;
+        margin-bottom: 10px;
+    }
+
+    .footer__logo {
+        text-align: center;
     }
 
     .footer__list {
-        row-gap: 10px;
-    }
-
-    .footer__contacts {
         display: flex;
-        column-gap: 20px;
-        row-gap: 10px;
+        /* grid-template-columns: repeat(auto-fit, minmax(auto, auto)); */
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        gap: 0;
+    }
+
+    .footer__item {
+        margin: 0 20px 0 0;
+        flex-shrink: 0;
+    }
+
+    .footer__contacts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, auto));
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
     }
 
     .footer__rights {
@@ -80,11 +99,13 @@
 }
 
 @media screen and (max-width: 475px) {
+    
     .footer {
-        padding: 20px;
+        padding: 10px;
     }
 
-    .footer__rights {
-        font-size: 12px;
+    .footer__list {
+        font-size: 14px;
     }
+
 }
