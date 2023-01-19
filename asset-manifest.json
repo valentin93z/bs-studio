@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bs-studio/static/css/main.a6b11441.css",
-    "main.js": "/bs-studio/static/js/main.a9a40103.js",
+    "main.css": "/bs-studio/static/css/main.1f4c495b.css",
+    "main.js": "/bs-studio/static/js/main.1427ac19.js",
     "static/media/gallery01.jpg": "/bs-studio/static/media/gallery01.a0058720c938691914a5.jpg",
     "static/media/gallery08.jpg": "/bs-studio/static/media/gallery08.fda733d4d96c4d86e9b8.jpg",
     "static/media/master04.jpg": "/bs-studio/static/media/master04.5274fb9a6ae69656a890.jpg",
@@ -11,7 +11,6 @@
     "static/media/master02.jpg": "/bs-studio/static/media/master02.d33d431167dff3b08a39.jpg",
     "static/media/master03.jpg": "/bs-studio/static/media/master03.24cea5004a5f048a3450.jpg",
     "static/media/gallery10.jpg": "/bs-studio/static/media/gallery10.56bc3bb0eb9bc3653103.jpg",
-    "static/media/about01.jpg": "/bs-studio/static/media/about01.075bc3aa7b8053d2941f.jpg",
     "static/media/gallery05.jpg": "/bs-studio/static/media/gallery05.aaaf9765b95a08bb6799.jpg",
     "static/media/gallery06.jpg": "/bs-studio/static/media/gallery06.928469b3491da8a8caa7.jpg",
     "static/media/gallery11.jpg": "/bs-studio/static/media/gallery11.14baf70bda196b640251.jpg",
@@ -21,11 +20,11 @@
     "static/media/gallery09.jpg": "/bs-studio/static/media/gallery09.6b6112443a9dd9f88d49.jpg",
     "static/media/gallery04.jpg": "/bs-studio/static/media/gallery04.5af87aa406a6a69af9a4.jpg",
     "index.html": "/bs-studio/index.html",
-    "main.a6b11441.css.map": "/bs-studio/static/css/main.a6b11441.css.map",
-    "main.a9a40103.js.map": "/bs-studio/static/js/main.a9a40103.js.map"
+    "main.1f4c495b.css.map": "/bs-studio/static/css/main.1f4c495b.css.map",
+    "main.1427ac19.js.map": "/bs-studio/static/js/main.1427ac19.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6b11441.css",
-    "static/js/main.a9a40103.js"
+    "static/css/main.1f4c495b.css",
+    "static/js/main.1427ac19.js"
   ]
 }
