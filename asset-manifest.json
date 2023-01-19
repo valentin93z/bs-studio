@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bs-studio/static/css/main.63713ec6.css",
-    "main.js": "/bs-studio/static/js/main.d8df6812.js",
+    "main.css": "/bs-studio/static/css/main.a6b11441.css",
+    "main.js": "/bs-studio/static/js/main.a9a40103.js",
     "static/media/gallery01.jpg": "/bs-studio/static/media/gallery01.a0058720c938691914a5.jpg",
     "static/media/gallery08.jpg": "/bs-studio/static/media/gallery08.fda733d4d96c4d86e9b8.jpg",
     "static/media/master04.jpg": "/bs-studio/static/media/master04.5274fb9a6ae69656a890.jpg",
@@ -21,11 +21,11 @@
     "static/media/gallery09.jpg": "/bs-studio/static/media/gallery09.6b6112443a9dd9f88d49.jpg",
     "static/media/gallery04.jpg": "/bs-studio/static/media/gallery04.5af87aa406a6a69af9a4.jpg",
     "index.html": "/bs-studio/index.html",
-    "main.63713ec6.css.map": "/bs-studio/static/css/main.63713ec6.css.map",
-    "main.d8df6812.js.map": "/bs-studio/static/js/main.d8df6812.js.map"
+    "main.a6b11441.css.map": "/bs-studio/static/css/main.a6b11441.css.map",
+    "main.a9a40103.js.map": "/bs-studio/static/js/main.a9a40103.js.map"
   },
   "entrypoints": [
-    "static/css/main.63713ec6.css",
-    "static/js/main.d8df6812.js"
+    "static/css/main.a6b11441.css",
+    "static/js/main.a9a40103.js"
   ]
 }
