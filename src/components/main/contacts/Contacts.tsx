@@ -22,7 +22,7 @@ const Contacts: FC = () => {
                 </li>
                 <li className={classes.contacts__item}>
                     <p className={classes.contacts__title}>Телефон</p>
-                    <p className={classes.contacts__data}>+1(111)111-11-11</p>
+                    <p className={classes.contacts__data}>+7(915)335-15-15</p>
                 </li>
                 <li className={classes.contacts__item}>
                     <p className={classes.contacts__title}>Инстаграм</p>
@@ -30,7 +30,7 @@ const Contacts: FC = () => {
                 </li>
                 <li className={classes.contacts__item}>
                     <p className={classes.contacts__title}>WhatsApp</p>
-                    <p className={classes.contacts__data}>+1(111)111-11-11</p>
+                    <p className={classes.contacts__data}>+7(915)335-15-15</p>
                 </li>
             </ul>
         </address>

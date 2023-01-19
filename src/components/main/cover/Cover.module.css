@@ -42,12 +42,6 @@
 }
 
 
-
-@media screen and (max-width: 1140px) {
-    
-}
-
-
 @media screen and (max-width: 1000px) {
 
     .cover {
@@ -70,7 +64,11 @@
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 475px) {
+
+    .cover {
+        margin: 40px 0 50px 0;
+    }
 
     .cover__header {
         font-size: 24px;
