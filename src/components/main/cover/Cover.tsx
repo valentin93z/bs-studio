@@ -1,17 +1,23 @@
 import React, {FC} from 'react';
 import classes from './Cover.module.css';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { showAnimationFromBottom } from '../../../utils/animations';
 
 const MainCover: FC = () => {
-
   return (
-    <section className={classes.cover}>
-        <h1 className={classes.cover__header}>Студия профессионального маникюра и педикюра</h1>
-        <p className={classes.cover__offer}>Запишитесь сейчас и получите скидку 10% <br/> на первое посещение</p>
-        <button className={classes.cover__button}>
+    <motion.section
+      className={classes.cover}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{once: true}}
+    >
+        <motion.h1 className={classes.cover__header} variants={showAnimationFromBottom} custom={1}>Студия профессионального маникюра и педикюра</motion.h1>
+        <motion.p className={classes.cover__offer} variants={showAnimationFromBottom} custom={2}>Запишитесь сейчас и получите скидку 10% <br/> на первое посещение</motion.p>
+        <motion.button className={classes.cover__button} variants={showAnimationFromBottom} custom={3}>
           <Link className={classes.cover__button_link} to='/bs-studio/order'>Записаться</Link>
-        </button>
-    </section>
+        </motion.button>
+    </motion.section>
   )
 }
 
