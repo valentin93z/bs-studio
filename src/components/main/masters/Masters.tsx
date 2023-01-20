@@ -1,27 +1,34 @@
 import React, {FC} from 'react';
 import { masterData } from './masterData';
 import classes from './Masters.module.css';
+import { motion } from 'framer-motion';
+import { showAnimationFromBottom } from '../../../utils/animations';
 
 const Masters: FC = () => {
   return (
-    <section className={classes.masters}>
+    <motion.section
+        className={classes.masters}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{amount: 0.2, once: true}}
+    >
         <div className={classes.anchor__container}>
             <span id='masters' className={classes.anchor}></span>
         </div>
         <p>Наши мастера</p>
-        <h2 className={classes.masters__header}>Мастера, творящие красоту</h2>
+        <motion.h2 className={classes.masters__header} variants={showAnimationFromBottom} custom={1}>Мастера, творящие красоту</motion.h2>
             <ul className={classes.masters__list}>
                 {masterData.map((master, index) =>
-                    <li className={classes.masters__item} key={index}>
+                    <motion.li className={classes.masters__item} variants={showAnimationFromBottom} custom={index + 2} key={index}>
                         <img src={master.photo} alt={master.name} />
                         <div className={classes.masters__description}>
                             <h4 className={classes.masters__name}>{master.name}</h4>
                             <p className={classes.masters__quality}>{master.quality}</p>
                         </div>
-                    </li>
+                    </motion.li>
                 )}
             </ul>
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,12 +1,12 @@
 export const showAnimationFromBottom = {
     hidden: {
-      y: 200,
+      y: 100,
       opacity: 0,
     },
     visible: (custom: number) => ({
       y: 0,
       opacity: 1,
-      transition: {delay: custom * 0.2, duration: 0.7}
+      transition: {delay: custom * 0.2, duration: 0.5}
     })
   };
 

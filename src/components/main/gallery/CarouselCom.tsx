@@ -1,12 +1,16 @@
-import React, {FC} from 'react';
+import React, {FC, forwardRef} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { galleryData } from './galleryData';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classes from './Carousel.module.css';
+import { motion } from 'framer-motion';
 
-const CarouselCom: FC = () => {
+export const CarouselCom = forwardRef(({...props}, ref:any) => {
   return (
-    <div className={classes.carousel__container}>
+    <div
+      ref={ref}
+      className={classes.carousel__container}
+    >
       <Carousel width='100%' dynamicHeight={false} showThumbs={false} infiniteLoop={true} showStatus={false}>
         {galleryData.map(item => 
           <div className={classes.carousel__img_container} key={item.id}>
@@ -15,6 +19,6 @@ const CarouselCom: FC = () => {
       </Carousel>
     </div>
   )
-}
+})
 
-export default CarouselCom;
+export const MCarouselCom = motion(CarouselCom);
