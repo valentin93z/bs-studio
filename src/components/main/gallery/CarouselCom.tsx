@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classes from './Carousel.module.css';
 import { motion } from 'framer-motion';
 
-export const CarouselCom = forwardRef(({...props}, ref:any) => {
+export const CarouselCom = forwardRef(({...props}, ref: any) => {
   return (
     <div
       ref={ref}

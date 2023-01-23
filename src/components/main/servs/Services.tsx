@@ -1,11 +1,11 @@
-import React, {FC} from 'react';
+import React, {FC, forwardRef} from 'react';
 import { serviceData } from './serviceData';
 import classes from './Services.module.css';
 import { motion } from 'framer-motion';
 import { showAnimationFromBottom } from '../../../utils/animations';
 
 
-const Services: FC = () => {
+const Services = forwardRef<HTMLElement>((props, ref) => {
   return (
     <motion.section
         className={classes.services}
@@ -14,7 +14,7 @@ const Services: FC = () => {
         viewport={{amount: 0.2, once: true}}
     >
         <div className={classes.anchor__container}>
-            <span id='services' className={classes.anchor}></span>
+            <span className={classes.anchor} ref={ref}></span>
         </div>
         <p>Наши услуги</p>
         <motion.h2 className={classes.services__header} variants={showAnimationFromBottom} custom={1}>Прайс на все виды услуг</motion.h2>
@@ -63,6 +63,6 @@ const Services: FC = () => {
         </div>
     </motion.section>
   )
-}
+})
 
 export default Services;

@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
+import React, {FC, forwardRef} from 'react';
 import { masterData } from './masterData';
 import classes from './Masters.module.css';
 import { motion } from 'framer-motion';
 import { showAnimationFromBottom } from '../../../utils/animations';
 
-const Masters: FC = () => {
+const Masters = forwardRef<HTMLElement>((props, ref) => {
   return (
     <motion.section
         className={classes.masters}
@@ -13,7 +13,7 @@ const Masters: FC = () => {
         viewport={{amount: 0.2, once: true}}
     >
         <div className={classes.anchor__container}>
-            <span id='masters' className={classes.anchor}></span>
+            <span className={classes.anchor} ref={ref}></span>
         </div>
         <p>Наши мастера</p>
         <motion.h2 className={classes.masters__header} variants={showAnimationFromBottom} custom={1}>Мастера, творящие красоту</motion.h2>
@@ -30,6 +30,6 @@ const Masters: FC = () => {
             </ul>
     </motion.section>
   )
-}
+})
 
 export default Masters;

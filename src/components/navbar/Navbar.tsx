@@ -25,13 +25,13 @@ const Navbar: FC = () => {
   return (
     <header className={classes.navbar} ref={burgerMenuRef}>
         <div className={classes.navbar__logo}>
-          <a className={classes.navbar__link} href='#'>MST NAIL</a>
+          <Link className={classes.navbar__link} to='/bs-studio/cover'>MST NAIL</Link>
         </div>
         <nav className={classes.navbar__navigation}>
             <ul className={ toggle ? classes.navbar__list_active : classes.navbar__list}>
               {navLinks.map((item, index) =>
                 <li className={classes.navbar__item} key={index}>
-                  <a className={classes.navbar__link} href={item.url} onClick={() => dispatch(burgerSlice.actions.setToggle(false))}>{item.title}</a>
+                  <Link className={classes.navbar__link} to={item.url} onClick={() => dispatch(burgerSlice.actions.setToggle(false))}>{item.title}</Link>
                 </li>
               )}
             </ul>

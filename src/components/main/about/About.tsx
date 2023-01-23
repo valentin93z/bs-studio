@@ -1,19 +1,20 @@
-import React, {FC} from 'react';
+import React, {FC, forwardRef} from 'react';
 import classes from './About.module.css';
 import about02 from '../../../img/about02.jpg';
 import { motion } from 'framer-motion';
 import { showAnimationFromBottom } from '../../../utils/animations';
 
-const About: FC = () => {
+const About = forwardRef<HTMLElement>((props, ref) => {
   return (
     <motion.section
       className={classes.about}
       initial='hidden'
       whileInView='visible'
       viewport={{amount: 0.2, once: true}}
+      
     >
         <div className={classes.anchor__container}>
-            <span id={'about'} className={classes.anchor}></span>
+            <span id={'about'} className={classes.anchor} ref={ref}></span>
         </div>
         <p>О студии</p>
         <motion.h2 className={classes.about__header} variants={showAnimationFromBottom} custom={1}>Пространство заботы и любви к себе</motion.h2>
@@ -61,6 +62,6 @@ const About: FC = () => {
         </div>
     </motion.section>
   )
-}
+})
 
 export default About;

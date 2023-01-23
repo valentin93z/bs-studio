@@ -1,3 +1,12 @@
+.anchor__container {
+    position: relative;
+}
+
+.anchor {
+    position: absolute;
+    top: -140px;
+}
+
 .cover {
     margin: 80px 0 100px 0;
 }

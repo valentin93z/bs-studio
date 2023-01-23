@@ -10,7 +10,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/bs-studio' element={<Main />} />
+        <Route path='/bs-studio/' element={<Main />} />
+        <Route path='/bs-studio/:block' element={<Main />} />
         <Route path='/bs-studio/order' element={<Order />} />
       </Routes>
       <Footer />

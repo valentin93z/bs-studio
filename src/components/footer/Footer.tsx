@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { navLinks } from '../navbar/navLinks';
 import classes from './Footer.module.css';
 
@@ -7,7 +8,9 @@ const Footer = () => {
     <footer className={classes.footer}>
         <section className={classes.footer__wrapper}>
             <div className={classes.footer__container}>
-                <div className={classes.footer__logo}><a className={classes.footer__link} href='#'>MST NAIL</a></div>
+                <div className={classes.footer__logo}>
+                    <Link className={classes.footer__link} to='/bs-studio/cover'>MST NAIL</Link>
+                </div>
                 <nav className={classes.footer__navigation}>
                     <ul className={classes.footer__list}>
                 			{navLinks.map((item, index) =>

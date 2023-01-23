@@ -1,9 +1,9 @@
-import React, {FC} from 'react';
+import React, {FC, forwardRef} from 'react';
 import classes from './Contacts.module.css';
 import { motion } from 'framer-motion';
 import { showAnimationFromBottom } from '../../../utils/animations';
 
-const Contacts: FC = () => {
+const Contacts = forwardRef<HTMLElement>((props, ref) => {
   return (
     <motion.section
         className={classes.contacts}
@@ -13,7 +13,7 @@ const Contacts: FC = () => {
     >
         <div>
             <div className={classes.anchor__container}>
-                <span id='contacts' className={classes.anchor}></span>
+                <span id='contacts' className={classes.anchor} ref={ref}></span>
             </div>
             <motion.h2 className={classes.contacts__header} variants={showAnimationFromBottom} custom={1}>Наши контакты</motion.h2>
         </div>
@@ -43,6 +43,6 @@ const Contacts: FC = () => {
         </address>
     </motion.section>
   )
-}
+})
 
 export default Contacts;
