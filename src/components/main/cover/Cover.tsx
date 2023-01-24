@@ -13,7 +13,7 @@ const MainCover = forwardRef<HTMLElement>((props, ref) => {
       viewport={{once: true}}
     >
         <div className={classes.anchor__container}>
-          <span id={'about'} className={classes.anchor} ref={ref}></span>
+          <span className={classes.anchor} ref={ref}></span>
         </div>
         <motion.h1 className={classes.cover__header} variants={showAnimationFromBottom} custom={1}>Студия профессионального маникюра и педикюра</motion.h1>
         <motion.p className={classes.cover__offer} variants={showAnimationFromBottom} custom={2}>Запишитесь сейчас и получите скидку 10% <br/> на первое посещение</motion.p>
